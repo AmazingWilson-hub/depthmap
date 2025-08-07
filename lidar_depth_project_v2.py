@@ -89,7 +89,7 @@ def fast_fill_depth(depth, iterations=3):
 depth_filled = fast_fill_depth(depth_map, iterations=3)
 
 # === [9] 補強下半部 ===
-# depth_filled[H//2:, :] = fast_fill_depth(depth_filled[H//2:, :], iterations=100)
+depth_filled[H//2:, :] = fast_fill_depth(depth_filled[H//2:, :], iterations=100)
 
 
 np.save(str(base_dir / "output" / "lidar_depth_000000.npy"), depth_filled)
