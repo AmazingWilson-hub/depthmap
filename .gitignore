@@ -4,6 +4,7 @@
 # 資料夾
 elan_dataset/
 output/
+data/
 citystreet_rainy_day_*/
 
 # lidar 專案舊檔（忽略掉）

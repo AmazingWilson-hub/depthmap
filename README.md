@@ -64,7 +64,7 @@ python lidar_depth_project_v2.py
 
 | 原始影像 | 彩色深度圖 |
 |----------|------------|
-| ![原始影像](assets/example_img.jpg) | ![深度圖](assets/example_depth.png) |
+| ![原始影像](assets/example_img.png) | ![深度圖](assets/example_depth.png) |
 
 ## 參數設定
 - 最大深度 `max_depth = 80.0`  
