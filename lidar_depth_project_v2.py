@@ -94,7 +94,7 @@ def process_pair(image_path: Path, pcd_path: Path, out_dir: Path) -> None:
             if depth_map[py, px] == 0 or z[i] < depth_map[py, px]:
                 depth_map[py, px] = z[i]
 
-    # 補洞（加速版）並加強下半部
+    # 補洞並加強下半部
     depth_filled = fast_fill_depth(depth_map, iterations=3)
     depth_filled[H // 2 :, :] = fast_fill_depth(depth_filled[H // 2 :, :], iterations=100)
 
@@ -172,10 +172,10 @@ os.environ.setdefault("MKL_NUM_THREADS", "1")
 
 jobs = list(_iter_jobs())
 if not jobs:
-    print("⚠️ 沒有可處理的影像任務。")
+    print("沒有可處理的影像任務。")
 else:
     max_workers = min(8, (os.cpu_count() or 4))
-    print(f"🚀 並行處理 {len(jobs)} 張影像，workers={max_workers}")
+    print(f"並行處理 {len(jobs)} 張影像，workers={max_workers}")
     with ThreadPoolExecutor(max_workers=max_workers) as ex:
         futures = [ex.submit(process_pair, img, pcd, outdir) for (img, pcd, outdir) in jobs]
         for fut in as_completed(futures):
