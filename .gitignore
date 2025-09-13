@@ -6,8 +6,10 @@ elan_dataset/
 output/
 citystreet_rainy_day_*/
 
-# lidar 專案測試檔案
-lidar_depth_project*
+# lidar 專案舊檔（忽略掉）
+lidar_depth_project.py
+
+# 測試檔
 speed_test.py
 
 # 其他暫存/測試檔
